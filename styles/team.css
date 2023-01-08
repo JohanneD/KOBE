@@ -70,23 +70,23 @@
     grid-row: span 3;
 }
 
-
-.team_member1:hover + .johanne_img{
+.team_member1:hover + .kobe_img{
     display: block;
     animation: fadeIn 1s;
 }
 
-.team_member2:hover + .adi_img{
+
+.team_member2:hover + .johanne_img{
     display: block;
     animation: fadeIn 1s;
 }
 
-.team_member3:hover + .anatole_img{
+.team_member3:hover + .adi_img{
     display: block;
     animation: fadeIn 1s;
 }
 
-.team_member4:hover + .kobe_img{
+.team_member4:hover + .anatole_img{
     display: block;
     animation: fadeIn 1s;
 }
