@@ -1,3 +1,7 @@
+.team_content{
+    margin: 0 10px 0 10px;
+}
+
 .name_list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -32,6 +36,15 @@
     font-size: 20px;
 }
 
+.team_member4{
+    display: flex;
+    grid-column: 1;
+    grid-row: 4;
+    align-items: center;
+    padding-left: 10px;
+    font-size: 20px;
+}
+
 .johanne_img { 
     display: none;
     grid-column: 2; 
@@ -50,6 +63,13 @@
     grid-row: span 3;
 }
 
+.kobe_img {
+    display:none;
+    grid-column: 2; 
+    grid-row: span 3;
+}
+
+
 .team_member1:hover + .johanne_img{
     display: block;
     animation: fadeIn 1s;
@@ -63,6 +83,19 @@
 .team_member3:hover + .anatole_img{
     display: block;
     animation: fadeIn 1s;
+}
+
+.team_member4:hover + .kobe_img{
+    display: block;
+    animation: fadeIn 1s;
+}
+
+.team_heading{
+    margin-bottom: 0;
+}
+
+.hover_message{
+    margin-top: 0;
 }
 
 @keyframes fadeIn {
