@@ -71,23 +71,31 @@
 }
 
 .team_member1:hover + .kobe_img{
-    display: block;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     animation: fadeIn 1s;
 }
 
 
 .team_member2:hover + .johanne_img{
-    display: block;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     animation: fadeIn 1s;
 }
 
 .team_member3:hover + .adi_img{
-    display: block;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     animation: fadeIn 1s;
 }
 
 .team_member4:hover + .anatole_img{
-    display: block;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     animation: fadeIn 1s;
 }
 
