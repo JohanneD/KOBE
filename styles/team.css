@@ -17,6 +17,7 @@
     align-items: center;
     padding-left: 10px;
     font-size: 20px;
+    cursor: pointer;
 }
 
 .team_member2{
@@ -111,3 +112,7 @@
     0% { opacity: 0; }
     100% { opacity: 1; }
   }
+
+#hidden_video{
+    visibility: hidden;
+}

@@ -18,7 +18,7 @@
             <h1 class="team_heading">This is our team</h1>
             <p class="hover_message">(hover over the name to see more...)</p>
             <div class="name_list">
-                <div class="team_member1">KOBE</div>
+                <div class="team_member1" onclick="show_hide()">KOBE</div>
                 <div class="kobe_img">
                     <img src="images/kobee.jpg" alt="image" height="350" />
                     <p style="margin-left: 5px;">Our remarkable robot, Kobe, strives to execute all of 
@@ -50,6 +50,14 @@
                         responsibility for the webpage.</p>
                 </div>
             </div>
+            <div id="hidden_video">
+            <h3 style="font-size:25px">Even great robots ccan make mistakes...</h3>
+            <video height="50" width="auto" controls>
+                <source src="images/koBe.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
+        </div>
+        <script src="scrips/hidden_video.js"></script>
     </body>
 </html>
