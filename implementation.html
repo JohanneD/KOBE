@@ -61,8 +61,11 @@
         </pre>
 
         <h2>Attack</h2>
-        <p>For this strategy we want to be as fast as possible while remaining precise.
-            We want to score the initial ball (the one that is in the robot in the beginning) then go to the line of the attacker's area to grab and throw each ball.
+        <p>Our strategy for attacking involves primarily relying on our handle_touch sensor. 
+            To execute this, we rapidly accelerate to release the ball. 
+            Then, we retreat and reorient ourselves against the wall near the desired ball, before rotating to grasp it.
+            Upon securing the ball, we reorient once more and advance while rotating, driving into the common area to shoot. 
+            The same methodology is applied to the ball on the opposing side.
         </p>
         <pre>
             <code class="language-none">
