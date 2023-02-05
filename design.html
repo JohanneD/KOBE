@@ -20,18 +20,24 @@
             <h2 style="text-align: left;">I. &emsp; Our vision</h2>
             <p>Our robot is called Kobe.
                 We created Kobe with two goals in mind: Simplicity and efficiency.
-                Our robot will therefore only rely two motors to navigate.  He uses a gyroscope, a colour sensor and a touch sensor to know where he is in the arena.
+                Our robot will therefore only rely two motors to navigate.  He uses a gyroscope, a color sensor and a touch sensor to know where he is in the arena.
                 Finally to grab and throw the balls we fitted him with a pair of rotating arms.
             <p>
 
             <h2 style="text-align: left;">II. &emsp; Actuators</h2>
-            <p>Kobe's main limbs are four motors.  Navigation is insured by two motors.  
-                One motor is used for grabbing balls. The last motor's purose is to trow the ball.
+            <p>Kobe's main limbs are four motors.  Driving is ensured by two of the large motors.  
+                The last large motor is used for grabbing balls. The last motor, the medium motor, is used to trow the ball. This motor is used here as we found it faster than 
+                the others, and for throwing a ball up to 50cm we needed speed for the throwing arm.
             </p>
                 
             <h2 style="text-align: left;">III. &emsp; Sensors</h2>
-            <p>We spent a lot of time trying endow Kobe with the gift of sight (through a sonar) but didnt manage because of interferences with the opponent's sonars. 
-                Therefore it uses a gyroscope to find the angle and a colour sensor to know how far we are.
+            <p>We spent a lot of time trying endow Kobe with the gift of sight (through a sonar). We tried implementing a way to detect the ball through scanning the area where we
+                thought the ball was, and then form the measurements be able to pinpoint at which angle the ball was. Unfortunatel due to interferences with the opponent's sonars, we 
+                did not manage to do this. We also had some strange problems with the sonar in the day leading up to the competition, where the sonar only read 
+                values less then 18 cm and bigger then 75cm. As the sonar was so unreliable for us we decided to try to not rely on it and rather rely on the sensors that we found were
+                reliable, the gyroscope, color and the touch. The gyroscope we used to find our angle, the color we used to navigate according to the lines on the area and the touch we 
+                used to correct certain faults in the rotation with the gyro, as the gyro has an accuracy of +/-3 degrees for 90 degrees turns. The way we corrected was to crash into the wall
+                with our back to ensure that we were 90 degrees on the wall.
             </p>
 
             <p>This is kobe:</p>
@@ -43,8 +49,6 @@
 
             <p>Here is his underbelly:</p>
             <div>
-                <img src="images/belly.jpg" alt="picture of the robot" height="300"/>
-                <img src="images/back.jpg" alt="picture of the robot" height="300"/>
                 <img src="images/Bottom.jpg" alt="picture of the robot" height="300"/>
             </div>
 
