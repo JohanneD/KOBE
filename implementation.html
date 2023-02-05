@@ -23,14 +23,14 @@
 
         <h2>Defence</h2>
         <p>For this phase we want to put distraction balls on the arena so that the other robots score our fake balls instead of the ones that would earn them points.
-            We then throw the real balls out of the way.
+            We then throw the real balls out of the way. Finally we go back and forth to try to use the flag to prevent others from scoring.
         </p>
         <pre>    
             <code class="language-none"> 
                 // FAKE BALL RELEASE
-                rotate(25)                   // rotates until the value of the gyroscope is 25° (pointing at the ball)
+                rotate(25)                   // rotates until the value of the gyroscope is 25° (pointing at the middle right ball)
                 release()                    // releases fake balls
-                
+
                 // GO TO RIGHT BALL
                 rotate(-90)                  // rotates to 90° (parallel to the green line)
                 while (robot.TOUCH == 0) {   // goes backwards until the touch sensor hits the wall 
@@ -38,14 +38,28 @@
                 }
                 rotate(0)                    // rotates so that it faces the balls
 
-                // GRAB BALL
-                while (robot.COLOUR != "GREEN/YELLOW") { // goes forward until the colour sensor detects the green line
+                // GRAB~TROW RIGHT BALL
+                while (robot.COLOUR != "GREEN") { // goes forward until the colour sensor detects the green line
                     forward()
                 }
+                grab()                       // rotates the grabbing arm 360°
+                rotate(-60)                  // aims at the middle left ball
+                trow()                       // rotates the trowing arm at max speed (hopefully moving the ball)
 
-                // THROW BALL OUT OF ARENA
-
-                // (GO TO ~ GRAB ~ TROW) LEFT BALL
+                //(GO TO ~ GRAB ~ TROW) LEFT BALL
+                rotate(-30)                  // positions itself parallel to green line facing the left
+                while (robot.TOUCH == 0) {   // goes backwards until the touch sensor hits the wall 
+                    backward()               
+                }
+                forward(90)                  // goes forward 90 cm (so that the ball is under the grabbing arm)
+                grab()                       
+                trow()                       // throws the ball out of the arena
+                
+                // BACK AND FORTH
+                while (robot.TOUCH == 0) {   // goes backwards until the touch sensor hits the wall 
+                    backward()               
+                }
+                forward(90)                  // goes forward to protect all goals
 
             </code>
         </pre>
