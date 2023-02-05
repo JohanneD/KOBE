@@ -41,4 +41,12 @@ h1 {
   flex-direction: column;
 }
 
-  
+video {
+  width: 80%;
+  height: auto;
+}
+@media (max-width: 600px) {
+  video {
+    width: 100%;
+  }
+}
