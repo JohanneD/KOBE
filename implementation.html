@@ -16,10 +16,6 @@
         </nav>
 
         <h1>Robot Implementation</h1>
-        <h2>Attack</h2>
-        <p>For this strategy we want to be as fast as possible while remaining precise.
-            We want to score the initial ball (the one that is in the robot in the beginning) then go to the line of the attacker's area to grab and throw each ball.
-        </p>
 
         <h2>Defence</h2>
         <p>For this phase we want to put distraction balls on the arena so that the other robots score our fake balls instead of the ones that would earn them points.
@@ -63,5 +59,63 @@
 
             </code>
         </pre>
+
+        <h2>Attack</h2>
+        <p>For this strategy we want to be as fast as possible while remaining precise.
+            We want to score the initial ball (the one that is in the robot in the beginning) then go to the line of the attacker's area to grab and throw each ball.
+        </p>
+        <pre>
+            <code class="language-none">
+                // BALL ONBOARD
+                forward(110)                 // gets in position to shoot the first ball
+                throw()                      // throws the ball with max speed
+                backward(80)                 // goes back 80 cm 
+
+                // GRAB LEFT BALL
+                rotate(90)                   // parallel to the attacker's line
+                while (robot.TOUCH == 0) {   // goes backwards until the touch sensor hits the left wall 
+                    backward()               
+                }
+                rotate(0)                    // faces the ball
+                while (robot.COLOUR != "BLACK") { // goes forward until the colour sensor detects the black line
+                    forward()
+                }
+                grab()
+
+                // TROW BALL
+                rotate(90)                   // parallel to the attacker's line
+                while (robot.TOUCH == 0) {   // goes backwards until the touch sensor hits the left wall 
+                    backward()               
+                }
+                forward(15)                  // positions itself in front of the left basket
+                rotate(0)                    //
+                forward(80)                  //
+                throw()
+                backward(80)
+
+                // GRAB RIGHT BALL
+                rotate(-90)
+                while (robot.TOUCH == 0) {   // goes backwards until the touch sensor hits the right wall 
+                    backward()               
+                }
+                rotate(0)                    //
+                while (robot.COLOUR != "BLACK") { // goes forward until the colour sensor detects the black line
+                    forward()
+                }
+                grab()
+
+                // TROW BALL
+                rotate(-90)                   // parallel to the attacker's line
+                while (robot.TOUCH == 0) {   // goes backwards until the touch sensor hits the right wall 
+                    backward()               
+                }
+                forward(15)                  // positions itself in front of the right basket
+                rotate(0)                    //
+                forward(80)                  //
+                throw()
+                backward(80)
+            </code>
+        </pre>
+
     </body>
 </html>
