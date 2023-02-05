@@ -18,19 +18,35 @@
         <h1>Robot Implementation</h1>
         <h2>Attack</h2>
         <p>For this strategy we want to be as fast as possible while remaining precise.
+            We want to score the initial ball (the one that is in the robot in the beginning) then go to the line of the attacker's area to grab and throw each ball.
+        </p>
 
         <h2>Defence</h2>
         <p>For this phase we want to put distraction balls on the arena so that the other robots score our fake balls instead of the ones that would earn them points.
             We then throw the real balls out of the way.
         </p>
-        We want to score the initial ball (the one that is in the robot in the beginning) then go to the line of the attacker's area to grab and throw each ball.<p>
         <pre>    
             <code class="language-none"> 
-                while color_value != GREENISH{ // goes to the green line
-                    forward(increment)
+                // FAKE BALL RELEASE
+                rotate(25)                   // rotates until the value of the gyroscope is 25° (pointing at the ball)
+                release()                    // releases fake balls
+                
+                // GO TO RIGHT BALL
+                rotate(-90)                  // rotates to 90° (parallel to the green line)
+                while (robot.TOUCH == 0) {   // goes backwards until the touch sensor hits the wall 
+                    backward()
                 }
-                rotate(30) // points at the real ball
-                release() // releases fake balls
+                rotate(0)                    // rotates so that it faces the balls
+
+                // GRAB BALL
+                while (robot.COLOUR != "GREEN/YELLOW") { // goes forward until the colour sensor detects the green line
+                    forward()
+                }
+
+                // THROW BALL OUT OF ARENA
+
+                // (GO TO ~ GRAB ~ TROW) LEFT BALL
+
             </code>
         </pre>
     </body>
